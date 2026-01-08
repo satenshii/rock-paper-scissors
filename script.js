@@ -32,13 +32,20 @@ const playGame = () => {
         humanChoice = humanChoice.toLowerCase();
         computerChoice = computerChoice.toLowerCase();
         if (humanChoice === computerChoice) {
-            console.log("It is a draw");
-            return;
-        }
-        if (checkHumanWin()) {
-            console.log(`Human wins with ${humanChoice} against ${computerChoice}`);
+            return "It is a draw";
+        } else if (checkHumanWin(humanChoice, computerChoice)) {
+            humanScore++;
+            return `Human wins with ${humanChoice} against ${computerChoice}`;
         } else {
-            console.log(`Computer wins with ${computerChoice} against ${humanChoice}`);
+            computerScore++;
+            return `Computer wins with ${computerChoice} against ${humanChoice}`;
         }
     }
+
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(getHumanChoice(), getComputerChoice()));
+        console.log(`The scores are: \nHuman has ${humanScore} points \nComputer has ${computerScore} points`);
+    }
 }
+
+playGame();

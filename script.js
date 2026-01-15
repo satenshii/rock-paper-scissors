@@ -42,7 +42,12 @@ const playRound = (humanChoice, computerChoice) => {
 const choiceButtons = document.querySelectorAll("button.choice");
 
 const onChoiceButtonClick = (e) => {
-    console.log(playRound(e.currentTarget.id, getComputerChoice()));
+    const result = playRound(e.currentTarget.id, getComputerChoice());
+    updateDisplay(result);
 }
 
 choiceButtons.forEach((button) => button.addEventListener("click", onChoiceButtonClick));
+
+const display = document.querySelector(".display");
+
+const updateDisplay = (text) => display.textContent = text;

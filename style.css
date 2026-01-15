@@ -4,4 +4,27 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #e5e6fa;
+    color: #660032;
+}
+
+.buttons button img {
+    width: 100px;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    gap: 50px;
+}
+
+.buttons button {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #660032;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
 }

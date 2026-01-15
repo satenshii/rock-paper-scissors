@@ -45,6 +45,10 @@ const onChoiceButtonClick = (e) => {
     const result = playRound(e.currentTarget.id, getComputerChoice());
     updateDisplay(result);
     updateUIScores();
+    const winner = checkWinner();
+    if (winner) {
+        endGame(winner);
+    }
 }
 
 choiceButtons.forEach((button) => button.addEventListener("click", onChoiceButtonClick));
@@ -57,5 +61,20 @@ const UIComputerScore = document.querySelector("#computer-score");
 
 const updateUIScores = () => {
     UIHumanScore.textContent = humanScore;
-    UIComputerScore = computerScore;
+    UIComputerScore.textContent = computerScore;
+}
+
+const checkWinner = () => {
+    if (computerScore === 5) {
+        return "computer";
+    } else if (humanScore === 5) {
+        return "human";
+    } else {
+        return undefined;
+    }
+}
+
+const endGame = (winner) => {
+    updateDisplay(`${winner} has won the entire game!!!!`);
+    choiceButtons.forEach((button) => button.disabled = true);
 }

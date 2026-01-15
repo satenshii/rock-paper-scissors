@@ -78,3 +78,15 @@ const endGame = (winner) => {
     updateDisplay(`${winner} has won the entire game!!!!`);
     choiceButtons.forEach((button) => button.disabled = true);
 }
+
+const restartButton = document.querySelector("#play-again");
+
+const restartGame = () => {
+    humanScore = 0;
+    computerScore = 0;
+    choiceButtons.forEach((button) => button.disabled = false);
+    updateDisplay("Choose your weapon!");
+    updateUIScores();
+}
+
+restartButton.addEventListener("click", restartGame);

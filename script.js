@@ -44,10 +44,18 @@ const choiceButtons = document.querySelectorAll("button.choice");
 const onChoiceButtonClick = (e) => {
     const result = playRound(e.currentTarget.id, getComputerChoice());
     updateDisplay(result);
+    updateUIScores();
 }
 
 choiceButtons.forEach((button) => button.addEventListener("click", onChoiceButtonClick));
 
 const display = document.querySelector(".display");
-
 const updateDisplay = (text) => display.textContent = text;
+
+const UIHumanScore = document.querySelector("#human-score");
+const UIComputerScore = document.querySelector("#computer-score");
+
+const updateUIScores = () => {
+    UIHumanScore.textContent = humanScore;
+    UIComputerScore = computerScore;
+}

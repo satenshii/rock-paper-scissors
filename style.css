@@ -6,6 +6,7 @@ body {
     flex-direction: column;
     background-color: #e5e6fa;
     color: #660032;
+    font-family: "Roboto", sans-serif;
 }
 
 .buttons button img {
@@ -27,4 +28,32 @@ body {
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
+}
+
+.scores {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.scores p {
+    padding: 10px;
+    border: 2px solid #660032;
+    border-radius: 10px;
+}
+
+.display {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#play-again {
+    background-color: #660032;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
 }
